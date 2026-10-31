@@ -5,20 +5,17 @@ A static, mobile-responsive business website for ATHINET, built with HTML5, CSS3
 ## Project structure
 
 - `index.html` — page structure and content
+- `services.html` — dedicated Services page for ATHINET connectivity and professional technology offerings
 - `css/style.css` — design system, layout, responsive styling, and accessibility tweaks
-- `js/script.js` — mobile navigation, package modal handling, form validation, FAQ behavior, and WhatsApp generation
-- `assets/images/` — place the official ATHINET logo and advertisement images here
-- `robots.txt` — placeholder SEO configuration
-- `sitemap.xml` — placeholder sitemap entry for the final domain
+- `js/script.js` — mobile navigation, package modal handling, form validation, FAQ behavior, WhatsApp enquiries, service quote handoff, and the local ATHINET chat assistant knowledge base
+- `assets/images/` — official ATHINET logo and advertisement
+- `robots.txt` — crawler access and sitemap location
+- `sitemap.xml` — sitemap entries for the published pages
 
-## Required image files
+## Brand assets
 
-The supplied ATHINET logo and advertising poster were not found in the workspace. Place them here before deployment:
-
-- `assets/images/athinet-logo.png`
-- `assets/images/athinet-advertisement.jpg`
-
-The site already includes fallback UI if these files are missing, but the official branding should be restored by adding the real files.
+- `assets/images/Athinet.logo.jpeg` — ATHINET logo
+- `assets/images/Athinet.advert.jpeg` — ATHINET internet advertisement
 
 ## Run locally
 
@@ -39,7 +36,15 @@ This is a static website and can be deployed to:
 - Netlify
 - Any static web host
 
-When deploying, update the `og:url` and the placeholder domain in `robots.txt` and `sitemap.xml` to your final live domain.
+The Services page uses `https://athinet.co.ke/services.html` as its canonical URL. Keep the sitemap, `robots.txt`, and page canonical metadata aligned if the deployed domain changes.
+
+## ATHINET chat assistant
+
+The ATHINET AI Assistant widget is a rule-based chat interface, not a generative AI service. It answers using the information published on the site and the centralized knowledge in `js/script.js`; professional technical offerings are distinguished from the currently published home internet service and remain subject to confirmed ATHINET arrangements. Chat messages are not persisted or sent to ATHINET. Do not put AI provider keys in this static site.
+
+## Service enquiries
+
+The Services page quotation form requires consent before its fields are enabled. Submitting prepares a prefilled WhatsApp message; the visitor reviews and sends it. The static site has no configured enquiry backend and does not store submissions. Configure a secure server-side form endpoint before changing the flow to claim server submission or storage.
 
 ## Business details to confirm before launch
 
