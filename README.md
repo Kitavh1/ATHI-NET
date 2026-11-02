@@ -8,14 +8,13 @@ A static, mobile-responsive business website for ATHINET, built with HTML5, CSS3
 - `services.html` — dedicated Services page for ATHINET connectivity and professional technology offerings
 - `css/style.css` — design system, layout, responsive styling, and accessibility tweaks
 - `js/script.js` — mobile navigation, package modal handling, form validation, FAQ behavior, WhatsApp enquiries, service quote handoff, and the local ATHINET chat assistant knowledge base
-- `assets/images/` — official ATHINET logo and advertisement
+- `assets/images/` — official ATHINET logo
 - `robots.txt` — crawler access and sitemap location
 - `sitemap.xml` — sitemap entries for the published pages
 
 ## Brand assets
 
 - `assets/images/Athinet.logo.jpeg` — ATHINET logo
-- `assets/images/Athinet.advert.jpeg` — ATHINET internet advertisement
 
 ## Run locally
 

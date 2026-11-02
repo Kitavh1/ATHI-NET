@@ -468,7 +468,7 @@ const getChatReply = (message) => {
     }
 
     return {
-      text: 'ATHINET advertises these monthly home internet packages:\n5 Mbps — KES 1,500\n6 Mbps — KES 2,000\n10 Mbps — KES 2,998\n15 Mbps — KES 3,450\n25 Mbps — KES 4,750\nPlease confirm current availability and terms with ATHINET.',
+      text: 'ATHINET advertises these monthly home internet packages:\n7 Mbps — KES 1,500\n10 Mbps — KES 2,000\n15 Mbps — KES 2,998\n25 Mbps — KES 3,450\n30 Mbps — KES 4,750\n50 Mbps — KES 6,050\nPlease confirm current availability and terms with ATHINET.',
       actions: [{ label: 'View packages', href: internetPackagesHref }]
     };
   }
