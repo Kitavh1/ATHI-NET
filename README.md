@@ -1,53 +1,38 @@
-# ATHINET website
+# ATHINET Corporate Website
 
-A static, mobile-responsive business website for ATHINET, built with HTML5, CSS3, and vanilla JavaScript.
+The main ATHINET website is a static, responsive corporate homepage built with HTML, CSS, and vanilla JavaScript. It introduces ATHINET's technology areas, preserves the home internet package and coverage enquiry flows, and links to the independent Services and Products websites.
 
 ## Project structure
 
-- `index.html` — page structure and content
-- `services.html` — dedicated Services page for ATHINET connectivity and professional technology offerings
-- `css/style.css` — design system, layout, responsive styling, and accessibility tweaks
-- `js/script.js` — mobile navigation, package modal handling, form validation, FAQ behavior, WhatsApp enquiries, service quote handoff, and the local ATHINET chat assistant knowledge base
-- `assets/images/` — official ATHINET logo
-- `robots.txt` — crawler access and sitemap location
-- `sitemap.xml` — sitemap entries for the published pages
-
-## Brand assets
-
-- `assets/images/Athinet.logo.jpeg` — ATHINET logo
+- `index.html` — corporate homepage, internet packages, coverage/contact forms, and SEO metadata
+- `css/style.css` — brand styles, page layouts, responsive rules, and accessibility details
+- `js/script.js` — mobile navigation, package enquiries, coverage checks, contact flow, FAQ, and ATHINET AI Assistant
+- `assets/images/Athinet.logo.jpeg` — official ATHINET logo
+- `robots.txt` — crawler access and main-site sitemap location
+- `sitemap.xml` — homepage sitemap for `https://athinet.co.ke/`
 
 ## Run locally
 
-Open `index.html` directly in a browser, or serve the folder with a simple local web server:
+Open `index.html` in a browser or run a local static server:
 
-```bash
-cd "C:\Users\bmumo\OneDrive\Desktop\Athi net"
+```powershell
 python -m http.server 8000
 ```
 
-Then visit: `http://localhost:8000`
+Then visit `http://localhost:8000`.
+
+## Related ATHINET websites
+
+- Main corporate website: <https://athinet.co.ke/>
+- Professional services: <https://services.athinet.co.ke/>
+- Products and applications: <https://products.athinet.co.ke/>
+
+## Enquiry handling
+
+The internet coverage, package, and contact forms prepare WhatsApp message drafts for visitors to review and send. This static site does not store or submit form data to a backend.
+
+The ATHINET AI Assistant is a rule-based interface using published website information and local knowledge in `js/script.js`. It does not send or persist chat messages.
 
 ## Deployment
 
-This is a static website and can be deployed to:
-
-- GitHub Pages
-- Netlify
-- Any static web host
-
-The Services page uses `https://athinet.co.ke/services.html` as its canonical URL. Keep the sitemap, `robots.txt`, and page canonical metadata aligned if the deployed domain changes.
-
-## ATHINET chat assistant
-
-The ATHINET AI Assistant widget is a rule-based chat interface, not a generative AI service. It answers using the information published on the site and the centralized knowledge in `js/script.js`; professional technical offerings are distinguished from the currently published home internet service and remain subject to confirmed ATHINET arrangements. Chat messages are not persisted or sent to ATHINET. Do not put AI provider keys in this static site.
-
-## Service enquiries
-
-The Services page quotation form requires consent before its fields are enabled. Submitting prepares a prefilled WhatsApp message; the visitor reviews and sends it. The static site has no configured enquiry backend and does not store submissions. Configure a secure server-side form endpoint before changing the flow to claim server submission or storage.
-
-## Business details to confirm before launch
-
-- Final package pricing and any terms that may apply
-- Coverage and service area details
-- Installation conditions and approval process
-- Preferred contact workflow for enquiries and customer support
+The site is compatible with GitHub Pages and other static hosts. Keep the canonical URL, Open Graph metadata, `robots.txt`, and `sitemap.xml` aligned with the published main-site domain.

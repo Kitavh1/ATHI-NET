@@ -80,12 +80,14 @@ if (menuToggle && mainNav) {
   menuToggle.addEventListener('click', () => {
     const isOpen = mainNav.classList.toggle('is-open');
     menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
   });
 
   mainNav.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       mainNav.classList.remove('is-open');
       menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Open navigation menu');
     });
   });
 }
@@ -325,25 +327,22 @@ const chatMessages = document.getElementById('chatMessages');
 const offTopicReply = "I'm ATHINET's official AI business assistant, and I'm here to help with our company, products, and services. Is there anything about ATHINET I can help you with?";
 const unknownBusinessReply = "I don't have verified information about that at the moment. Please contact the ATHINET team for accurate assistance.";
 const chatWhatsAppUrl = 'https://wa.me/254705605922?text=' + encodeURIComponent('Hello ATHINET, I would like to enquire about your services.');
+const servicesWebsite = 'https://services.athinet.co.ke/';
+const productsWebsite = 'https://products.athinet.co.ke/';
 const athinetKnowledgeBase = Object.freeze({
-  verifiedCompanyServices: ['Home internet packages and coverage enquiries published on the ATHINET website'],
-  professionalOfferings: [
-    'Website development and custom software',
-    'Cybersecurity consultation and basic assessments',
-    'Data analytics and reporting',
-    'Networking and IT solutions',
-    'Business process automation'
-  ],
-  professional: {
-    name: 'Brian Kitavi Mumo',
-    role: 'available to support ATHINET projects and client engagements, subject to the company’s agreed service arrangements'
-  }
+  companyDescription: 'ATHINET is a Kenyan technology company focused on connecting people, empowering businesses and delivering practical digital solutions.',
+  verifiedCompanyServices: [
+    'internet connectivity for homes and business enquiries',
+    'software development and web applications',
+    'cybersecurity and secure systems',
+    'data analytics and reporting',
+    'networking and IT infrastructure',
+    'business automation and digital solutions'
+  ]
 });
-const isServicesPage = window.location.pathname.endsWith('/services.html');
-const servicesPagePath = isServicesPage ? '' : 'services.html';
-const serviceQuoteHref = `${servicesPagePath}#quote`;
-const internetPackagesHref = `${isServicesPage ? 'index.html' : ''}#packages`;
-const coverageHref = `${isServicesPage ? 'index.html' : ''}#coverage`;
+const serviceQuoteHref = `${servicesWebsite}#quote`;
+const internetPackagesHref = '#packages';
+const coverageHref = '#coverage';
 const chatContactActions = [
   { label: 'Make an enquiry', href: '#contact' },
   { label: 'WhatsApp ATHINET', href: 'https://wa.me/254705605922', external: true }
@@ -352,7 +351,7 @@ const chatContactActions = [
 const getChatReply = (message) => {
   const text = message.toLowerCase().replace(/[’']/g, "'").trim();
   const serviceAction = (section = '') => [
-    { label: 'View professional services', href: `${servicesPagePath}#${section || 'company-services'}` },
+    { label: 'View professional services', href: `${servicesWebsite}${section ? `#${section}` : ''}`, external: true },
     { label: 'Request a quotation', href: serviceQuoteHref }
   ];
 
@@ -366,7 +365,7 @@ const getChatReply = (message) => {
 
   if (/^(hi|hello|hey|good morning|good afternoon|good evening)[!. ]*$/.test(text)) {
     return {
-      text: 'Hello! I’m ATHINET AI Assistant, ATHINET’s official business assistant. I can help with published home internet information and professional offerings featured for ATHINET engagements, subject to agreed arrangements. What would you like to know?'
+      text: 'Hello! I’m ATHINET AI Assistant. I can help with ATHINET internet connectivity, technology services and products. What would you like to know?'
     };
   }
 
@@ -384,8 +383,11 @@ const getChatReply = (message) => {
 
   if (/\b(hire|engage|work with|contact|reach)\b.{0,45}\b(team|developer|technical|software|professional)\b|\bwho handles\b.{0,35}\b(software|development|technical)\b/.test(text)) {
     return {
-      text: `${athinetKnowledgeBase.professional.name} is the technical professional behind the software and IT expertise featured on the Services page. He is ${athinetKnowledgeBase.professional.role}. Contact ATHINET to discuss an engagement.`,
-      actions: serviceAction('team')
+      text: 'ATHINET has an experienced team supporting software engineering and IT engagements. Contact the ATHINET team to discuss your needs, project scope and agreed service arrangements.',
+      actions: [
+        { label: 'Explore professional services', href: servicesWebsite, external: true },
+        { label: 'Contact ATHINET', href: '#contact' }
+      ]
     };
   }
 
@@ -398,8 +400,18 @@ const getChatReply = (message) => {
 
   if (/\b(what services|which services|services do you offer|what does athinet do|what does the company do|about athinet|about the company|company information)\b/.test(text)) {
     return {
-      text: `ATHINET's published website verifies ${athinetKnowledgeBase.verifiedCompanyServices[0]}. The Services page also presents ${athinetKnowledgeBase.professionalOfferings.join(', ')} as professional team offerings for ATHINET engagements, subject to agreed company arrangements. Contact ATHINET to confirm scope and availability.`,
-      actions: serviceAction()
+      text: `${athinetKnowledgeBase.companyDescription} ATHINET's technology areas include ${athinetKnowledgeBase.verifiedCompanyServices.join(', ')}. Home internet package availability and service engagement scope should be confirmed with the ATHINET team.`,
+      actions: [
+        { label: 'Explore all services', href: servicesWebsite, external: true },
+        { label: 'View internet packages', href: internetPackagesHref }
+      ]
+    };
+  }
+
+  if (/\b(products?|applications?)\b/.test(text) && /\b(athinet|company|your|our|product|application|software)\b/.test(text)) {
+    return {
+      text: 'ATHINET has a dedicated Products and Applications website. Visit it to explore the available products and applications.',
+      actions: [{ label: 'Explore ATHINET Products', href: productsWebsite, external: true }]
     };
   }
 
@@ -407,7 +419,7 @@ const getChatReply = (message) => {
     return {
       text: 'ATHINET’s published site lists home internet packages. Business connectivity options are not detailed there, so please contact ATHINET to confirm availability and requirements.',
       actions: [
-        { label: 'Business connectivity enquiries', href: `${servicesPagePath}#company-services` },
+        { label: 'Business connectivity enquiries', href: servicesWebsite, external: true },
         { label: 'Request a quotation', href: serviceQuoteHref }
       ]
     };
@@ -415,50 +427,50 @@ const getChatReply = (message) => {
 
   if (/\b(website development|web development|business website|corporate website|e-commerce|ecommerce|web application|custom software|software development|pos system|point of sale|business management system|inventory system|school management|erp|saas|database application)\b|\b(develop|build|create)\b.{0,30}\b(website|websites|web app|web application)\b/.test(text)) {
     return {
-      text: 'The Services page presents website development and custom software—including business websites, e-commerce, POS, inventory, school management, ERP, and SaaS applications—as professional team offerings. Work is subject to agreed ATHINET arrangements and confirmed project scope.',
+      text: 'ATHINET’s professional services include website and application development, custom software, POS and business systems. Engagement scope and arrangements are confirmed with the ATHINET team.',
       actions: serviceAction('software')
     };
   }
 
   if (/\b(cybersecurity|cyber security|vulnerability assessment|security assessment|secure coding|network security)\b/.test(text)) {
     return {
-      text: 'Cybersecurity consultation, security awareness, secure application development, and basic vulnerability assessment are presented as professional team offerings. Any assessment requires agreed scope and authorization; no certification or security guarantee is implied.',
+      text: 'ATHINET presents cybersecurity consultation, secure application development and network security services. Any assessment requires agreed scope and authorization; no certification or security guarantee is implied.',
       actions: serviceAction('cybersecurity')
     };
   }
 
   if (/\b(data analytics|data analysis|power bi|excel report|business intelligence|data visualization|data cleaning)\b/.test(text)) {
     return {
-      text: 'The Services page presents data analysis, data cleaning, Excel reporting, Power BI dashboards, business intelligence, and visualization as professional team offerings using Python, Excel, and Power BI.',
+      text: 'ATHINET’s data services include data analysis, reporting, dashboards and data visualization. Contact the team to discuss project requirements and scope.',
       actions: serviceAction('analytics')
     };
   }
 
   if (/\b(networking|network configuration|network troubleshooting|it support|it infrastructure|system deployment|technology consultancy)\b/.test(text)) {
     return {
-      text: 'The Services page presents network configuration and troubleshooting, infrastructure, IT support, system deployment, and technical consultancy as professional team offerings. These are separate from ATHINET’s published home internet packages.',
+      text: 'ATHINET provides professional networking and IT infrastructure services, including network configuration and technical support. These are separate from ATHINET’s published home internet packages.',
       actions: serviceAction('networking')
     };
   }
 
   if (/\b(business automation|workflow automation|process automation|digital transformation|business reporting|digital business management)\b/.test(text)) {
     return {
-      text: 'Business process and workflow automation, database development, reporting, and digital business management are presented as professional team offerings on the Services page.',
+      text: 'ATHINET’s professional services include business process automation, reporting and digital business management solutions.',
       actions: serviceAction('automation')
     };
   }
 
   if (/\b(portfolio|selected projects|wi-flow|motor hub|schoolyard|athi auto spares|athinet website)\b/.test(text)) {
     return {
-      text: 'The Services page presents WI-FLOW, MOTOR HUB, SCHOOLYARD, the ATHINET website, and ATHI AUTO SPARES as selected development project or portfolio work—not as a claim that each is an ATHINET product or client endorsement.',
+      text: 'ATHINET’s Services website provides information about selected development and portfolio work. Visit the site for project context; portfolio examples are not necessarily ATHINET products or client endorsements.',
       actions: serviceAction('projects')
     };
   }
 
   if (/\b(website|web address|url|webpage|site link)\b/.test(text) && /\b(athinet|company|official|your|website|web address|url|webpage)\b/.test(text)) {
     return {
-      text: 'ATHINET’s official website is https://kitavh1.github.io/ATHI-NET/.',
-      actions: [{ label: 'Visit ATHINET', href: 'https://kitavh1.github.io/ATHI-NET/', external: true }]
+      text: 'ATHINET’s official corporate website is https://athinet.co.ke/.',
+      actions: [{ label: 'Visit ATHINET', href: 'https://athinet.co.ke/', external: true }]
     };
   }
 
@@ -502,7 +514,7 @@ const getChatReply = (message) => {
 
   if (/\b(what is athinet|company)\b/.test(text)) {
     return {
-      text: 'ATHINET is a technology company. Its website provides verified information about home internet connectivity and advertised packages. Please contact the ATHINET team to confirm other service details and availability.',
+      text: athinetKnowledgeBase.companyDescription,
       actions: chatContactActions
     };
   }
