@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Careers at ATHINET | Join Our Team</title>
+    <meta name="description" content="Explore career opportunities at ATHINET. Discover job vacancies, join our growing technology team and apply online." />
+    <link rel="canonical" href="https://athinet.co.ke/careers.html" />
+    <meta property="og:title" content="Careers at ATHINET | Join Our Team" />
+    <meta property="og:description" content="Explore career opportunities at ATHINET and discover current vacancies." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ATHINET" />
+    <meta property="og:url" content="https://athinet.co.ke/careers.html" />
+    <meta property="og:image" content="https://athinet.co.ke/assets/images/Athinet.logo.jpeg" />
+    <meta property="og:image:alt" content="ATHINET logo" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Careers at ATHINET | Join Our Team" />
+    <meta name="twitter:description" content="Explore career opportunities at ATHINET and discover current vacancies." />
+    <meta name="twitter:image" content="https://athinet.co.ke/assets/images/Athinet.logo.jpeg" />
+    <link rel="icon" type="image/jpeg" href="assets/images/Athinet.logo.jpeg" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/careers.css" />
+    <script src="js/recruitment-config.js"></script>
+    <script src="js/jobs-data.js" defer></script>
+    <script src="js/careers.js" defer></script>
+  </head>
+  <body class="careers-page">
+    <header class="site-header">
+      <div class="container nav-wrapper">
+        <a class="brand" href="index.html" aria-label="ATHINET home">
+          <img src="assets/images/Athinet.logo.jpeg" alt="ATHINET logo" />
+          <span class="brand-wordmark">ATHINET</span>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="mainNav" aria-label="Open navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="index.html#about">About Us</a>
+          <a href="index.html#solutions">Solutions</a>
+          <a href="index.html#packages">Internet Packages</a>
+          <a href="https://services.athinet.co.ke/">Services</a>
+          <a href="https://products.athinet.co.ke/">Products</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="careers.html" aria-current="page">Careers</a>
+          <a class="btn btn-primary nav-cta" href="#vacancies">View Vacancies</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="careers-hero">
+        <div class="container careers-hero-inner">
+          <p class="eyebrow">Careers at ATHINET</p>
+          <h1>Connect. Support. Grow.</h1>
+          <p class="careers-lead">Join our dynamic team and help us deliver excellent customer service.</p>
+          <a class="btn btn-primary" href="#vacancies">Explore open roles <span aria-hidden="true">&darr;</span></a>
+        </div>
+        <div class="careers-hero-mark" aria-hidden="true"><span>ATHI</span><span>NET</span></div>
+      </section>
+
+      <section class="careers-intro">
+        <div class="container careers-intro-grid">
+          <div>
+            <p class="eyebrow">Build with us</p>
+            <h2>Good technology starts with people.</h2>
+          </div>
+          <p>ATHINET works across internet connectivity, software, cybersecurity, data analytics and IT infrastructure. We welcome people who want to contribute to practical technology and thoughtful customer support.</p>
+        </div>
+      </section>
+
+      <section class="careers-values">
+        <div class="container careers-values-grid">
+          <div>
+            <p class="eyebrow">Why ATHINET</p>
+            <h2>Work across connected technology.</h2>
+          </div>
+          <ul class="value-list">
+            <li><span>01</span><div><h3>Technology with purpose</h3><p>Contribute to work that connects people and helps businesses move forward.</p></div></li>
+            <li><span>02</span><div><h3>Room to contribute</h3><p>Bring your perspective to a team working across digital services and customer needs.</p></div></li>
+            <li><span>03</span><div><h3>Support that matters</h3><p>Help people get clear, professional support when they need it.</p></div></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="vacancies-section" id="vacancies">
+        <div class="container">
+          <div class="careers-section-heading">
+            <div>
+              <p class="eyebrow">Current opportunities</p>
+              <h2>Find your next role.</h2>
+            </div>
+            <p>Vacancy status and application deadlines are shown on each listing.</p>
+          </div>
+          <div class="vacancy-list" id="vacancyList" aria-live="polite"></div>
+          <p class="vacancy-empty" id="vacancyEmpty" hidden>No open vacancies are listed at this time. Check back for future opportunities.</p>
+        </div>
+      </section>
+
+      <section class="application-section" id="application">
+        <div class="container application-layout">
+          <div class="application-intro">
+            <p class="eyebrow">Apply to ATHINET</p>
+            <h2>Tell us about yourself.</h2>
+            <p>Choose an open vacancy above to begin an application. Applications are associated with the selected role.</p>
+            <div class="application-note" id="applicationNotice" role="status">
+              <strong>Online applications are not active yet.</strong>
+              <p>Please do not enter personal information here until secure submission is enabled. To apply for the advertised role, email your application documents to <a href="mailto:athinet72@gmail.com">athinet72@gmail.com</a>.</p>
+            </div>
+          </div>
+
+          <form id="applicationForm" class="application-form" novalidate hidden>
+            <p class="selected-vacancy-label">Applying for <strong id="selectedJobTitle">Select an open vacancy</strong></p>
+            <input id="vacancySlug" name="vacancySlug" type="hidden" />
+
+            <fieldset id="applicationFields" disabled>
+              <legend>Personal information</legend>
+              <div class="application-fields">
+                <div class="form-field"><label for="applicantName">Full name *</label><input id="applicantName" name="fullName" autocomplete="name" maxlength="120" required /></div>
+                <div class="form-field"><label for="applicantEmail">Email address *</label><input id="applicantEmail" name="email" type="email" autocomplete="email" maxlength="254" required /></div>
+                <div class="form-field"><label for="applicantPhone">Phone number *</label><input id="applicantPhone" name="phone" type="tel" autocomplete="tel" maxlength="25" required /></div>
+                <div class="form-field"><label for="applicantTown">Current town or county *</label><input id="applicantTown" name="townCounty" autocomplete="address-level2" maxlength="120" required /></div>
+                <div class="form-field"><label for="applicantCountry">Country *</label><input id="applicantCountry" name="country" autocomplete="country-name" maxlength="80" required /></div>
+              </div>
+
+              <legend>Professional information</legend>
+              <div class="application-fields">
+                <div class="form-field"><label for="educationLevel">Highest education level *</label><select id="educationLevel" name="educationLevel" required><option value="">Select a level</option><option>Secondary</option><option>Certificate</option><option>Diploma</option><option>Bachelor's degree</option><option>Postgraduate degree</option><option>Other</option></select></div>
+                <div class="form-field"><label for="course">Course or qualification *</label><input id="course" name="courseQualification" maxlength="160" required /></div>
+                <div class="form-field"><label for="institution">Institution attended *</label><input id="institution" name="institution" maxlength="160" required /></div>
+                <div class="form-field"><label for="experience">Relevant work experience *</label><textarea id="experience" name="workExperience" rows="3" maxlength="2500" required></textarea></div>
+                <div class="form-field"><label for="employmentStatus">Current employment status *</label><select id="employmentStatus" name="employmentStatus" required><option value="">Select a status</option><option>Employed</option><option>Self-employed</option><option>Unemployed</option><option>Student</option><option>Other</option></select></div>
+                <div class="form-field"><label for="skills">Relevant skills *</label><textarea id="skills" name="relevantSkills" rows="3" maxlength="1500" required></textarea></div>
+              </div>
+
+              <legend>Application details</legend>
+              <div class="application-fields application-fields-single">
+                <div class="form-field"><label for="interest">Why are you interested in this position? *</label><textarea id="interest" name="interest" rows="4" maxlength="2500" required></textarea></div>
+                <div class="form-field"><label for="coverLetter">Brief cover letter *</label><textarea id="coverLetter" name="coverLetter" rows="5" maxlength="5000" required></textarea></div>
+                <div class="form-field"><label for="availability">Notice period or availability *</label><input id="availability" name="availability" maxlength="160" required /></div>
+              </div>
+
+              <legend>Documents</legend>
+              <p class="upload-guidance">PDF or DOCX only. Maximum 5 MB per file and 10 MB total.</p>
+              <div class="application-fields application-fields-single">
+                <div class="form-field"><label for="cvFile">CV or resume *</label><input id="cvFile" name="cv" type="file" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required /></div>
+                <div class="form-field"><label for="certificateFiles">Academic certificates (optional)</label><input id="certificateFiles" name="certificates" type="file" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" /></div>
+                <div class="form-field"><label for="supportingFiles">Supporting documents (optional)</label><input id="supportingFiles" name="supportingDocuments" type="file" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" /></div>
+              </div>
+
+              <div id="turnstileWidget" class="turnstile-widget" aria-label="Spam protection"></div>
+              <input id="turnstileToken" name="turnstileToken" type="hidden" />
+              <label class="consent-field"><input id="applicationConsent" name="consent" type="checkbox" required /><span>I confirm that the information provided is accurate and consent to ATHINET processing my application for recruitment purposes in accordance with its <a href="privacy.html">Privacy Policy</a>.</span></label>
+              <button class="btn btn-primary application-submit" id="applicationSubmit" type="submit">Submit application</button>
+            </fieldset>
+            <p class="application-status" id="applicationStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="recruitment-info">
+        <div class="container recruitment-info-grid">
+          <div>
+            <p class="eyebrow">Our commitment</p>
+            <h2>Fair consideration. Respectful handling.</h2>
+          </div>
+          <div>
+            <p>ATHINET welcomes applications and considers candidates on role-related skills and qualifications. Recruitment information is collected for recruitment purposes and should only be submitted through the application route shown for an open vacancy.</p>
+            <p>Read the <a href="privacy.html">recruitment privacy notice</a> for information about candidate data. For questions, contact <a href="mailto:athinet72@gmail.com">athinet72@gmail.com</a>.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="careers-faq">
+        <div class="container">
+          <div class="careers-section-heading">
+            <div><p class="eyebrow">Recruitment FAQs</p><h2>Questions, answered.</h2></div>
+          </div>
+          <div class="careers-faq-list">
+            <details><summary>How do I apply for a vacancy?</summary><p>Open a vacancy to review its full description and deadline, then use Apply Now. While online submission is being configured, send your application documents to <a href="mailto:athinet72@gmail.com">athinet72@gmail.com</a>.</p></details>
+            <details><summary>What file types can I submit?</summary><p>The online application accepts PDF and DOCX documents, with a 5 MB limit per file and a 10 MB total limit.</p></details>
+            <details><summary>Can I apply after the deadline?</summary><p>No. Applications are not accepted for a vacancy after its deadline or after it is marked closed.</p></details>
+            <details><summary>Will every applicant be contacted?</summary><p>The recruitment team will review applications and contact shortlisted candidates.</p></details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand"><a class="brand" href="index.html" aria-label="ATHINET home"><img src="assets/images/Athinet.logo.jpeg" alt="ATHINET logo" /><span class="brand-wordmark">ATHINET</span></a><p>Connect. Support. Grow.</p></div>
+        <div><h3>Company</h3><ul><li><a href="index.html#about">About ATHINET</a></li><li><a href="index.html#solutions">Our Solutions</a></li><li><a href="careers.html">Careers</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
+        <div><h3>Explore</h3><ul><li><a href="https://services.athinet.co.ke/">Professional Services</a></li><li><a href="https://products.athinet.co.ke/">Products &amp; Applications</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="recruitment-admin.html">Recruitment admin</a></li></ul></div>
+        <div><h3>Contact</h3><ul><li><a href="mailto:athinet72@gmail.com">athinet72@gmail.com</a></li><li><a href="tel:+254705605922">+254 705 605 922</a></li><li><a href="tel:+254114095683">+254 114 095 683</a></li></ul></div>
+      </div>
+      <div class="container footer-bottom"><p>&copy; <span id="year"></span> ATHINET. All rights reserved.</p></div>
+    </footer>
+
+    <dialog class="vacancy-dialog" id="vacancyDialog" aria-labelledby="dialogJobTitle">
+      <div class="vacancy-dialog-header"><p class="eyebrow">Vacancy details</p><button class="dialog-close" id="dialogClose" type="button" aria-label="Close vacancy details">&times;</button></div>
+      <div id="vacancyDetails"></div>
+      <div class="dialog-actions" id="dialogActions"></div>
+    </dialog>
+  </body>
+</html>

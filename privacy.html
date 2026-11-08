@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy | ATHINET</title>
+    <meta name="description" content="Learn how ATHINET handles information submitted for recruitment purposes." />
+    <link rel="canonical" href="https://athinet.co.ke/privacy.html" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/careers.css" />
+    <script src="js/recruitment-config.js"></script>
+  </head>
+  <body class="privacy-page">
+    <header class="site-header">
+      <div class="container nav-wrapper">
+        <a class="brand" href="index.html" aria-label="ATHINET home"><img src="assets/images/Athinet.logo.jpeg" alt="ATHINET logo" /><span class="brand-wordmark">ATHINET</span></a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="mainNav" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+        <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
+          <a href="index.html">Home</a><a href="careers.html">Careers</a><a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <article class="container privacy-content">
+        <p class="eyebrow">Candidate information</p>
+        <h1>Recruitment Privacy Notice</h1>
+        <p>This notice explains how ATHINET handles personal information supplied for recruitment. Contact <a href="mailto:athinet72@gmail.com">athinet72@gmail.com</a> with privacy questions or requests.</p>
+
+        <h2>Information collected</h2>
+        <p>For an application, ATHINET may collect the personal and professional details requested in the application form, your CV or resume, optional certificates and supporting documents, and the vacancy you apply for. Please do not include information that is not relevant to your application.</p>
+
+        <h2>Why information is used</h2>
+        <p>Application information is used to receive, assess and manage your application, contact you about the recruitment process, and maintain recruitment records. ATHINET does not publish applicant information or CVs.</p>
+
+        <h2>Storage and access</h2>
+        <p>When secure online applications are enabled, application records and documents are intended to be stored in a private ATHINET-controlled recruitment system. Access is restricted to authorized recruitment administrators. The application notification email contains limited reference and contact details, not CV contents or document links.</p>
+        <p>Online applications are currently <strong id="onlineStatus">not enabled</strong>. Until the secure submission workflow is active, do not send application files unless you choose to apply by email to ATHINET.</p>
+
+        <h2>Retention and your choices</h2>
+        <p>ATHINET should retain recruitment information only for as long as needed for recruitment and applicable obligations. For a copy, correction, deletion request or a question about how your information is handled, contact ATHINET at <a href="mailto:athinet72@gmail.com">athinet72@gmail.com</a>. Requests are subject to applicable legal requirements.</p>
+
+        <h2>Service providers and security</h2>
+        <p>If configured, ATHINET's recruitment workflow uses its database and private file-storage provider to process application data; an email provider may deliver limited submission notifications. ATHINET should configure these services with appropriate access controls and review their applicable terms. No website transmission or storage method can be guaranteed completely secure.</p>
+
+        <h2>Changes to this notice</h2>
+        <p>This notice may be updated when ATHINET's recruitment process or system changes. The current version will be published on this page.</p>
+      </article>
+    </main>
+    <footer class="site-footer"><div class="container footer-bottom"><p>&copy; <span id="year"></span> ATHINET. <a href="careers.html">Careers</a></p></div></footer>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+      const config = window.ATHINET_RECRUITMENT_CONFIG || {};
+      if (config.supabaseUrl && config.supabaseAnonKey && config.turnstileSiteKey) {
+        document.getElementById('onlineStatus').textContent = 'enabled';
+      }
+      document.querySelector('.nav-toggle').addEventListener('click', (event) => {
+        const button = event.currentTarget;
+        const nav = document.getElementById(button.getAttribute('aria-controls'));
+        const open = nav.classList.toggle('is-open');
+        button.setAttribute('aria-expanded', String(open));
+      });
+    </script>
+  </body>
+</html>

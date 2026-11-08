@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Recruitment Administration | ATHINET</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/careers.css" />
+    <script src="js/recruitment-config.js"></script>
+    <script src="js/recruitment-admin.js" defer></script>
+  </head>
+  <body class="admin-page">
+    <header class="site-header">
+      <div class="container nav-wrapper">
+        <a class="brand" href="careers.html" aria-label="ATHINET careers"><img src="assets/images/Athinet.logo.jpeg" alt="ATHINET logo" /><span class="brand-wordmark">ATHINET</span></a>
+        <nav class="main-nav" aria-label="Administration navigation"><a href="careers.html">Careers</a><a href="privacy.html">Privacy</a></nav>
+      </div>
+    </header>
+    <main class="container">
+      <div class="admin-heading"><div><p class="eyebrow">ATHINET recruitment</p><h1>Recruitment administration</h1></div><button class="btn btn-secondary" id="signOut" type="button" hidden>Sign out</button></div>
+      <section class="admin-panel admin-login" id="loginPanel" aria-labelledby="loginTitle">
+        <h2 id="loginTitle">Administrator sign in</h2>
+        <p>Access is limited to ATHINET recruitment administrators.</p>
+        <form id="loginForm">
+          <div class="form-field"><label for="adminEmail">Administrator email</label><input id="adminEmail" type="email" autocomplete="username" required /></div>
+          <div class="form-field"><label for="adminPassword">Password</label><input id="adminPassword" type="password" autocomplete="current-password" required /></div>
+          <button class="btn btn-primary" type="submit">Sign in</button>
+          <p class="admin-message" id="loginMessage" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="admin-workspace" id="adminWorkspace" hidden>
+        <section class="admin-panel" aria-labelledby="applicationsTitle">
+          <h2 id="applicationsTitle">Applications</h2>
+          <div class="admin-tools">
+            <label class="visually-hidden" for="applicationSearch">Search applicants and vacancies</label>
+            <input id="applicationSearch" type="search" placeholder="Search applicant or vacancy" />
+            <button class="btn btn-secondary" id="refreshApplications" type="button">Refresh applications</button>
+          </div>
+          <p class="admin-message" id="applicationMessage" role="status" aria-live="polite"></p>
+          <div class="admin-table-wrap">
+            <table class="admin-table"><thead><tr><th>Applicant</th><th>Vacancy</th><th>Received</th><th>Status</th><th>Documents</th><th>Details</th></tr></thead><tbody id="applicationsBody"></tbody></table>
+          </div>
+        </section>
+
+        <section class="admin-panel" aria-labelledby="jobsTitle" style="margin-top: 1.5rem">
+          <h2 id="jobsTitle">Vacancies</h2>
+          <div class="admin-tools"><label class="visually-hidden" for="jobPicker">Select vacancy to edit</label><select id="jobPicker"><option value="">Create a vacancy</option></select></div>
+          <form class="admin-job-form" id="jobForm">
+            <input id="jobId" type="hidden" />
+            <div class="form-field"><label for="jobTitle">Job title</label><input id="jobTitle" maxlength="160" required /></div>
+            <div class="form-field"><label for="jobSlug">Vacancy slug</label><input id="jobSlug" maxlength="120" pattern="[a-z0-9-]+" required /></div>
+            <div class="form-field"><label for="jobDepartment">Department</label><input id="jobDepartment" maxlength="120" /></div>
+            <div class="form-field"><label for="jobLocation">Location</label><input id="jobLocation" maxlength="160" /></div>
+            <div class="form-field"><label for="jobType">Employment type</label><input id="jobType" maxlength="100" placeholder="e.g. Full-time" /></div>
+            <div class="form-field"><label for="jobPositions">Number of positions</label><input id="jobPositions" type="number" min="1" step="1" /></div>
+            <div class="form-field form-field-wide"><label for="jobShortDescription">Short description</label><textarea id="jobShortDescription" rows="2" maxlength="500" required></textarea></div>
+            <div class="form-field form-field-wide"><label for="jobDescription">Full description</label><textarea id="jobDescription" rows="4" maxlength="5000" required></textarea></div>
+            <div class="form-field form-field-wide"><label for="jobResponsibilities">Responsibilities (one per line)</label><textarea id="jobResponsibilities" rows="3"></textarea></div>
+            <div class="form-field form-field-wide"><label for="jobQualifications">Qualifications (one per line)</label><textarea id="jobQualifications" rows="3"></textarea></div>
+            <div class="form-field"><label for="jobExperience">Required experience</label><input id="jobExperience" maxlength="500" /></div>
+            <div class="form-field"><label for="jobSkills">Required skills (one per line)</label><textarea id="jobSkills" rows="3"></textarea></div>
+            <div class="form-field"><label for="jobDeadline">Application deadline</label><input id="jobDeadline" type="datetime-local" required /></div>
+            <div class="form-field"><label for="jobEmail">Application email</label><input id="jobEmail" type="email" value="athinet72@gmail.com" required /></div>
+            <div class="form-field"><label for="jobStatus">Vacancy status</label><select id="jobStatus"><option value="draft">Draft</option><option value="open">Open</option><option value="closed">Closed</option></select></div>
+            <div class="admin-job-actions"><button class="btn btn-primary" type="submit">Save vacancy</button><button class="btn btn-secondary" id="newJob" type="button">Clear form</button></div>
+          </form>
+          <p class="admin-message" id="jobMessage" role="status" aria-live="polite"></p>
+        </section>
+      </section>
+    </main>
+    <footer class="site-footer"><div class="container footer-bottom"><p>Recruitment records are confidential. Sign out after use.</p></div></footer>
+  </body>
+</html>

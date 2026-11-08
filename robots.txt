@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /recruitment-admin.html
 
 Sitemap: https://athinet.co.ke/sitemap.xml
